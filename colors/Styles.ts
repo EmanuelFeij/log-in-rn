@@ -11,6 +11,7 @@ const GlobalStyles = StyleSheet.create({
     },
     Container: {
         flex: 1,
+        width: '100%',
         backgroundColor: ColorsDarkTheme.BackgroundColor,
         justifyContent: 'space-around',
         alignItems: 'center',

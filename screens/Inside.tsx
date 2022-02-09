@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import { Options } from './StackNavigator';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { Container, Button, Text } from 'native-base';
+import { Container, Button, Text, Center, Box } from 'native-base';
 import GlobalStyles from '../colors/Styles';
 
 type InsideProps = NativeStackScreenProps<Options, 'Inside'>;
@@ -15,17 +15,17 @@ const Inside = ({ navigation, route }: InsideProps) => {
     };
 
     return (
-        <Container style={GlobalStyles.Container}>
+        <View style={GlobalStyles.Container}>
             <Text style={GlobalStyles.h1}>Inside App Screen</Text>
             <Text style={GlobalStyles.normalText}>
-                {options.userName} {options.age} {options.email}
+                {options.name} {options.password}
             </Text>
-            <View>
+            <Box alignItems='center'>
                 <Button style={GlobalStyles.Button} onPress={handleToTop}>
-                    <Text style={GlobalStyles.normalText}>LogOut</Text>
+                    <Text style={GlobalStyles.h1}>Log Out</Text>
                 </Button>
-            </View>
-        </Container>
+            </Box>
+        </View>
     );
 };
 

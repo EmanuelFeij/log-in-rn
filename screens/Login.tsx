@@ -1,29 +1,31 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { ColorsDarkTheme } from '../colors/Colors';
+
 import GlobalStyles from '../colors/Styles';
 
-import { Container, Button } from 'native-base';
+import { Container, Button, Box } from 'native-base';
 
-import { Options } from './StackNavigator';
+import { Options, FormInfo } from './StackNavigator';
 import LoginForm from './LoginForm';
 
 type LoginProps = NativeStackScreenProps<Options, 'Login'>;
 
 export default function Login({ navigation }: LoginProps) {
     const [rememberChecked, setRememberChecked] = useState(false);
+    const [formInfo, setFormInfo] = useState<FormInfo>({
+        name: '',
+        password: '',
+    });
 
-    const handleSignUpButton = () => navigation.navigate('SignUp');
-    const handleLoginButton = () =>
-        navigation.navigate('Inside', {
-            userName: 'emanuel',
-            age: 29,
-            email: 'a',
-        });
+    const handleSignUpButton = () => {
+        if (formInfo.name !== '' && formInfo.password !== '') {
+            navigation.navigate('Inside', formInfo);
+        }
+    };
 
     return (
-        <Container style={GlobalStyles.Container}>
+        <View style={GlobalStyles.Container}>
             <View>
                 <Text style={GlobalStyles.h1}>Welcome</Text>
                 <Text style={GlobalStyles.normalText}>
@@ -31,20 +33,19 @@ export default function Login({ navigation }: LoginProps) {
                 </Text>
             </View>
             <LoginForm
+                setFormInfo={setFormInfo}
                 rememberChecked={rememberChecked}
                 setRememberChecked={setRememberChecked}
             />
 
-            <View>
+            <Box alignItems='center'>
                 <Button
                     style={GlobalStyles.Button}
-                    onPress={handleSignUpButton}
-                    bordered
-                    dark>
+                    onPress={handleSignUpButton}>
                     <Text style={GlobalStyles.h1}>Sign Up</Text>
                 </Button>
-            </View>
-        </Container>
+            </Box>
+        </View>
     );
 }
 
