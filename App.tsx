@@ -10,26 +10,6 @@ import * as Font from 'expo-font';
 import { NativeBaseProvider } from 'native-base';
 
 export default function App() {
-    /*     const [loaded, setLoaded] = useState<boolean>(false);
-
-    const loadFuckingFont = async () => {
-        return Font.loadAsync({
-            Roboto: require('native-base/Fonts/Roboto.ttf'),
-            Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
-            ...Ionicons.font,
-        });
-    };
-
-    if (loaded === false) {
-        return (
-            <AppLoading
-                startAsync={loadFuckingFont}
-                onFinish={() => setLoaded(true)}
-                onError={console.warn}
-            />
-        );
-    } */
-
     return (
         <NativeBaseProvider>
             <NavigationContainer>

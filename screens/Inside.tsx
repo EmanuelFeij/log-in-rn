@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import { Options } from './StackNavigator';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { Container, Button, Text, Center, Box } from 'native-base';
+import { Button, Text, Box } from 'native-base';
 import GlobalStyles from '../colors/Styles';
 
 type InsideProps = NativeStackScreenProps<Options, 'Inside'>;

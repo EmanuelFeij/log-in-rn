@@ -4,7 +4,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import GlobalStyles from '../colors/Styles';
 
-import { Container, Button, Box } from 'native-base';
+import { Button, Box } from 'native-base';
 
 import { Options, FormInfo } from './StackNavigator';
 import LoginForm from './LoginForm';
