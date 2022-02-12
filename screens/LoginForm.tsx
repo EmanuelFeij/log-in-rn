@@ -18,68 +18,6 @@ type LoginFormProps = {
     setRememberChecked: React.Dispatch<React.SetStateAction<boolean>>;
     setFormInfo: React.Dispatch<React.SetStateAction<FormInfo>>;
 };
-/* 
-const LoginForm = ({
-    rememberChecked,
-    setRememberChecked,
-    setFormInfo,
-}: LoginFormProps) => {
-    return (
-        <Form style={styles.formStyle}>
-            <View style={styles.item}>
-                <Item stackedLabel style={{ borderColor: 'transparent' }}>
-                    <Label style={styles.labelStyle}>Username</Label>
-                    <Input
-                        style={{
-                            color: 'white',
-                        }}
-                        autoCorrect
-                        onChangeText={(value) =>
-                            setFormInfo((prevName) => ({
-                                ...prevName,
-                                name: value,
-                            }))
-                        }
-                    />
-                </Item>
-            </View>
-            <View style={styles.item}>
-                <Item style={{ borderColor: 'transparent' }} stackedLabel last>
-                    <Label style={styles.labelStyle}>Password</Label>
-                    <Input
-                        type={'password'}
-                        style={{ color: 'white' }}
-                        onChangeText={(value) =>
-                            setFormInfo((prevPass) => ({
-                                ...prevPass,
-                                password: value,
-                            }))
-                        }
-                    />
-                </Item>
-            </View>
-            <View>
-                <ListItem style={{ borderColor: 'transparent' }}>
-                    <CheckBox
-                        checked={rememberChecked}
-                        onPress={() => {
-                            setRememberChecked(!rememberChecked);
-                        }}
-                    />
-
-                    <Text
-                        style={{
-                            fontSize: 13,
-                            color: '#cccccc',
-                            paddingLeft: 10,
-                        }}>
-                        Remember Me
-                    </Text>
-                </ListItem>
-            </View>
-        </Form>
-    );
-}; */
 
 const LoginForm = ({
     rememberChecked,
@@ -126,6 +64,7 @@ const LoginForm = ({
                                     password: value,
                                 }))
                             }
+                            secureTextEntry={true}
                         />
                         <FormControl.HelperText mb='5'>
                             Your password

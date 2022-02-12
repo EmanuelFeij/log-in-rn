@@ -1,13 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { Stack } from './screens/StackNavigator';
 import Login from './screens/Login';
-import Inside from './screens/Inside';
-import { Ionicons } from '@expo/vector-icons';
-import React, { useState } from 'react';
-import AppLoading from 'expo-app-loading';
-import * as Font from 'expo-font';
+
+import React from 'react';
+
 import { NativeBaseProvider } from 'native-base';
+
+import { BottomNav } from './screens/BottomNav';
 
 export default function App() {
     return (
@@ -19,7 +19,7 @@ export default function App() {
                         headerShown: false,
                     }}>
                     <Stack.Screen name={'Login'} component={Login} />
-                    <Stack.Screen name={'Inside'} component={Inside} />
+                    <Stack.Screen name={'BottomNav'} component={BottomNav} />
                 </Stack.Navigator>
             </NavigationContainer>
         </NativeBaseProvider>

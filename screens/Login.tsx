@@ -20,7 +20,7 @@ export default function Login({ navigation }: LoginProps) {
 
     const handleSignUpButton = () => {
         if (formInfo.name !== '' && formInfo.password !== '') {
-            navigation.navigate('Inside', formInfo);
+            navigation.navigate('BottomNav', formInfo);
         }
     };
 
